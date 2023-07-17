@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+require __Dir__ . '/api.php';
+
 Route::get('/', function () {
     return view('app');
 });
