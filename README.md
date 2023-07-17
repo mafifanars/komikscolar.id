@@ -28,7 +28,7 @@ http://localhost:8000/api/register
    `Accept:` application/vnd.api+json  
    `Content-Type:` application/vnd.api+json  
    #### Body `form-data`
-   `name:` Jhon Doe
+   `name:` Afifan
    `email:` sm.afifanaly@gmail.com
    `password:` Test123!
    `password_confirmation:` Test123!
