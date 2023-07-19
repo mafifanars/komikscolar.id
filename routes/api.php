@@ -27,6 +27,7 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::prefix('scolar/api')->controller(ApiController::class)->group(function () {
     Route::get('/users', 'getAllUsers')->name('getAllUsers');
     Route::get('/user/{id}', 'getUser')->name('getUser');
+    Route::get('/mission', 'getMission')->name('getMission');
 });
 
 
