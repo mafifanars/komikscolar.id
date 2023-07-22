@@ -28,6 +28,8 @@ Route::prefix('scolar/api')->controller(ApiController::class)->group(function ()
     Route::get('/users', 'getAllUsers')->name('getAllUsers');
     Route::get('/user/{id}', 'getUser')->name('getUser');
     Route::get('/mission', 'getMission')->name('getMission');
+    Route::get('/question', 'getQuestion')->name('getQuestion');
+    Route::get('/choice', 'getChoice')->name('getChoice');
 });
 
 

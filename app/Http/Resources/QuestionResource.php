@@ -2,19 +2,17 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Mission;
+use App\Models\Choice;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class MissionResource extends JsonResource
+class QuestionResource extends JsonResource
 {
-
 
     public function __construct($resource)
     {
         parent::__construct($resource);
     }
-
 
 
     /**
@@ -24,12 +22,13 @@ class MissionResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        // return parent::toArray($request);
-        $mission = Mission::where('mission_sections_id', $this->resource->id)->get();
+        $choice = Choice::where('questions_id', $this->resource->id)->get();
 
         return [
-            'name' => $this->resource->name,
-            'mission' => MissionQuestionConnectorResource::collection($mission),
+            'id' => $this->resource->id,
+            // 'missions_id' => $this->resource->missions_id,
+            'pertanyaan' => $this->resource->pertanyaan,
+            'choice' => $choice,
         ];
     }
 }

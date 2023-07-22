@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             MissionSectionSeeder::class,
             MissionSeeder::class,
+            QuestionSeeder::class,
+            ChoiceSeeder::class,
         ]);
 
 
