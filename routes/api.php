@@ -25,11 +25,18 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 
 Route::prefix('scolar/api')->controller(ApiController::class)->group(function () {
+    Route::get('/user/token', 'getCsrfToken')->name('getToken');
     Route::get('/users', 'getAllUsers')->name('getAllUsers');
     Route::get('/user/{id}', 'getUser')->name('getUser');
+    Route::get('/user/from/{email}', 'getUserFromEmail')->name('getUserFromEmail');
     Route::get('/mission', 'getMission')->name('getMission');
     Route::get('/question', 'getQuestion')->name('getQuestion');
     Route::get('/choice', 'getChoice')->name('getChoice');
+    Route::put('/xp/user/update', 'updateXpUser')->name('updateXpUser');
+    Route::post('/user/create', 'createUser')->name('createUser');
+    Route::put('/user/email-verify-at/update', 'verifyMail')->name('verifyMail');
+    Route::post('/user/login', 'loginUser')->name('loginUser');
+    Route::post('/send/email/test', 'sendMail')->name('sendMail');
 });
 
 

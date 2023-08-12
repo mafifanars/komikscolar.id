@@ -18,8 +18,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->bigInteger('xp')->default(0);
+            $table->bigInteger('mission_index')->default(1);
             $table->string('profile')->default('http://localhost:8000/img/logo.png');
             $table->string('avatar')->nullable();
+            $table->integer('login')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

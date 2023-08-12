@@ -17,7 +17,7 @@ class QuestionSeeder extends Seeder
             for ($j=0; $j < 5; $j++) { 
                 DB::table('questions')->insert([
                     'missions_id' => $i,
-                    'pertanyaan' => 'Pertanyaan ' . $j,
+                    'pertanyaan' => 'Pertanyaan dari id ' . $i . ' No. ' . $j,
                 ]);
             }
         }
