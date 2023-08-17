@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mission_sections', function (Blueprint $table) {
+        Schema::create('q_r_for_books', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('book_id');
             $table->foreign('book_id')->references('id')->on('books');
-            $table->string('name');
+            $table->string('code');
+            $table->integer('used')->default(0);
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mission_sections');
+        Schema::dropIfExists('q_r_for_books');
     }
 };

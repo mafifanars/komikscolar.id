@@ -9,6 +9,7 @@ use App\Mail\VerifyEmailUserMail;
 use App\Models\Choice;
 use App\Models\Mission;
 use App\Models\MissionSection;
+use App\Models\QRForBook;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -199,6 +200,31 @@ class ApiController extends Controller
         }
 
 
+    }
+
+    public function changeLoginInfo(Request $request)
+    {
+        $user = User::find($request->id);
+        
+        if ($user->update([
+            'login' => $request->login
+        ])) {
+            return $this->success($user->first(), "Success edit data login");
+        }else{
+            return $this->error([], "Cannot update user login data", 406);
+        }
+
+    }
+
+    public function codeForBooks()
+    {
+        $code = QRForBook::all();
+
+        if ($code != []) {
+            return $this->success($code, "Success get all code data");
+        }else{
+            return $this->error([], "No data", 404);
+        }
     }
 
 

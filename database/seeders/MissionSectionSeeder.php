@@ -15,18 +15,23 @@ class MissionSectionSeeder extends Seeder
     {
         $data = [
             [
+                'book_id' => 1,
                 'name' => 'Bagian 1',
             ],
             [
+                'book_id' => 1,
                 'name' => 'Bagian 2',
             ],
             [
+                'book_id' => 1,
                 'name' => 'Bagian 3',
             ],
             [
+                'book_id' => 1,
                 'name' => 'Bagian 4',
             ],
             [
+                'book_id' => 1,
                 'name' => 'Bagian 5',
             ],
         ];

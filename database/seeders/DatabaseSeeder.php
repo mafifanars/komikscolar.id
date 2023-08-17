@@ -15,10 +15,12 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(10)->create();
 
         $this->call([
+            BookSeeder::class,
             MissionSectionSeeder::class,
             MissionSeeder::class,
             QuestionSeeder::class,
             ChoiceSeeder::class,
+            QrCodeSeeder::class,
         ]);
 
 

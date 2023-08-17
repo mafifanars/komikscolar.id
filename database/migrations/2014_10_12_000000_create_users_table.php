@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('profile')->default('http://localhost:8000/img/logo.png');
             $table->string('avatar')->nullable();
             $table->integer('login')->default(0);
+            $table->unsignedBigInteger('book_id')->nullable();
+            $table->foreign('book_id')->references('id')->on('books');
             $table->rememberToken();
             $table->timestamps();
         });
