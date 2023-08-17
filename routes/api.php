@@ -38,7 +38,8 @@ Route::prefix('scolar/api')->controller(ApiController::class)->group(function ()
     Route::post('/user/login', 'loginUser')->name('loginUser');
     Route::post('/send/email/test', 'sendMail')->name('sendMail');
     Route::put('/user/login/update', 'changeLoginInfo')->name('changeLoginInfo');
-    Route::get('code-for-books', 'codeForBooks')->name('codeForBooks');
+    Route::get('/code-for-books', 'codeForBooks')->name('codeForBooks');
+    Route::put('/book/user/update', 'changeUserBook')->name('changeUserBook');
 });
 
 

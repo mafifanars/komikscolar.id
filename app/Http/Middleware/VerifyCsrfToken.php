@@ -18,5 +18,6 @@ class VerifyCsrfToken extends Middleware
         '/scolar/api/send/email/test',
         '/scolar/api/user/login',
         '/scolar/api/user/login/update',
+        '/scolar/api/book/user/update',
     ];
 }

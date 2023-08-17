@@ -24,6 +24,7 @@ class User extends Authenticatable
         'xp',
         'mission_index',
         'login',
+        'book_id',
     ];
 
     /**

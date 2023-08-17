@@ -9,6 +9,10 @@ class QRForBook extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'used',
+    ];
+
     protected $hidden = [
         'created_at',
         'updated_at',

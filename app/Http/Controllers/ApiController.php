@@ -228,4 +228,26 @@ class ApiController extends Controller
     }
 
 
+    public function changeUserBook(Request $request)
+    {
+        $user = User::findOrFail($request->id);
+
+        $qrcode = QRForBook::where('code', $request->code)->first();
+
+        $data = [
+            'book_id' => $request->book_id,
+        ];
+
+        $usedCode = [
+            'used' => 1,
+        ];
+
+        if ($user->update($data) && $qrcode->update($usedCode)) {
+            return $this->success($data, 'Success update book');
+        }else {
+            return $this->error([], "Cannot update book", 406);
+        }
+    }
+
+
 }
