@@ -28,6 +28,7 @@ class MissionResource extends JsonResource
         $mission = Mission::where('mission_sections_id', $this->resource->id)->get();
 
         return [
+            'book_id' => $this->book_id,
             'name' => $this->resource->name,
             'mission' => MissionQuestionConnectorResource::collection($mission),
         ];

@@ -63,9 +63,13 @@ class ApiController extends Controller
         }
     }
 
-    public function getMission()
+    public function getMission($book_id = null)
     {
-        $mission = MissionResource::collection(MissionSection::all());
+        $mission = MissionResource::collection(MissionSection::all(), $book_id);
+
+        if ($book_id != null) {
+            $mission = MissionResource::collection(MissionSection::where('book_id', $book_id)->get());
+        }
 
         if ($mission != []) {
             return $this->success($mission, "Success get all missions");

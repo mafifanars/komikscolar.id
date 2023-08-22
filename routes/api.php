@@ -30,6 +30,7 @@ Route::prefix('scolar/api')->controller(ApiController::class)->group(function ()
     Route::get('/user/{id}', 'getUser')->name('getUser');
     Route::get('/user/from/{email}', 'getUserFromEmail')->name('getUserFromEmail');
     Route::get('/mission', 'getMission')->name('getMission');
+    Route::get('/mission-from-book/{book_id}', 'getMission')->name('getMission');
     Route::get('/question', 'getQuestion')->name('getQuestion');
     Route::get('/choice', 'getChoice')->name('getChoice');
     Route::put('/xp/user/update', 'updateXpUser')->name('updateXpUser');
