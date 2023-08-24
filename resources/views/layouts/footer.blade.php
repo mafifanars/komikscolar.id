@@ -10,7 +10,7 @@
                 <p>Medan</p>
             </div>
             <div class="w-full px-4 mb-12 md:w-1/3">
-                <h3 class="font-semibold text-xl text-dark mb-5">Kategori Beasiswa</h3>
+                <h3 class="font-semibold text-xl text-dark mb-5">Tautan Cepat</h3>
                 <ul class="text-slate-500">
                     <li>
                         <a href="#" class="inline-block text-base hover:text-primary mb-3">Beranda</a>
