@@ -21,6 +21,9 @@
                     <li>
                         <a href="#" class="inline-block text-base hover:text-primary mb-3">Sosial Media</a>
                     </li>
+                    <li>
+                        <a href="/kebijakan-privasi" class="inline-block text-base hover:text-primary mb-3">Kebijakan Privasi</a>
+                    </li>
                 </ul>
             </div>
         </div>
