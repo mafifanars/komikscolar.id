@@ -22,3 +22,7 @@ Route::get('/', function () {
 Route::get('/get-in-touch', function () {
     return view('get-in-touch');
 });
+
+Route::get('/kebijakan-privasi', function () {
+    return view('kebijakan-privasi');
+});
