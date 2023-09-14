@@ -22,18 +22,6 @@ class MissionSectionSeeder extends Seeder
                 'book_id' => 1,
                 'name' => 'Bagian 2',
             ],
-            [
-                'book_id' => 1,
-                'name' => 'Bagian 3',
-            ],
-            [
-                'book_id' => 1,
-                'name' => 'Bagian 4',
-            ],
-            [
-                'book_id' => 1,
-                'name' => 'Bagian 5',
-            ],
         ];
 
         DB::table('mission_sections')->insert($data);

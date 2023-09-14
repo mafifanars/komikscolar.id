@@ -16,7 +16,7 @@ class MissionSeeder extends Seeder
         $data = [
             [
                 'mission_sections_id' => 1,
-                'xp' => 100,
+                'xp' => 200,
                 'title' => 'Misi 1',
             ],
             [
@@ -25,49 +25,14 @@ class MissionSeeder extends Seeder
                 'title' => 'Misi 2',
             ],
             [
-                'mission_sections_id' => 1,
-                'xp' => 250,
+                'mission_sections_id' => 2,
+                'xp' => 200,
                 'title' => 'Misi 3',
             ],
             [
                 'mission_sections_id' => 2,
-                'xp' => 100,
-                'title' => 'Misi 4',
-            ],
-            [
-                'mission_sections_id' => 2,
                 'xp' => 200,
-                'title' => 'Misi 5',
-            ],
-            [
-                'mission_sections_id' => 2,
-                'xp' => 250,
-                'title' => 'Misi 6',
-            ],
-            [
-                'mission_sections_id' => 2,
-                'xp' => 300,
-                'title' => 'Misi 7',
-            ],
-            [
-                'mission_sections_id' => 2,
-                'xp' => 350,
-                'title' => 'Misi 8',
-            ],
-            [
-                'mission_sections_id' => 3,
-                'xp' => 100,
-                'title' => 'Misi 9',
-            ],
-            [
-                'mission_sections_id' => 4,
-                'xp' => 100,
-                'title' => 'Misi 10',
-            ],
-            [
-                'mission_sections_id' => 5,
-                'xp' => 100,
-                'title' => 'Misi 11',
+                'title' => 'Misi 3',
             ],
         ];
 

@@ -29,18 +29,20 @@ Route::prefix('scolar/api')->controller(ApiController::class)->group(function ()
     Route::get('/users', 'getAllUsers')->name('getAllUsers');
     Route::get('/user/{id}', 'getUser')->name('getUser');
     Route::get('/user/from/{email}', 'getUserFromEmail')->name('getUserFromEmail');
+    Route::put('/user/login/update', 'changeLoginInfo')->name('changeLoginInfo');
+    Route::put('/user/email-verify-at/update', 'verifyMail')->name('verifyMail');
+    Route::put('/user/profile/update', 'updateProfile')->name("updateProfile");
+    Route::post('/user/login', 'loginUser')->name('loginUser');
+    Route::post('/user/create', 'createUser')->name('createUser');
     Route::get('/mission', 'getMission')->name('getMission');
+    Route::get('/mission/{id}', 'getMissionById')->name('getMissionById');
     Route::get('/mission-from-book/{book_id}', 'getMission')->name('getMission');
     Route::get('/question', 'getQuestion')->name('getQuestion');
     Route::get('/choice', 'getChoice')->name('getChoice');
-    Route::put('/xp/user/update', 'updateXpUser')->name('updateXpUser');
-    Route::post('/user/create', 'createUser')->name('createUser');
-    Route::put('/user/email-verify-at/update', 'verifyMail')->name('verifyMail');
-    Route::post('/user/login', 'loginUser')->name('loginUser');
-    Route::post('/send/email/test', 'sendMail')->name('sendMail');
-    Route::put('/user/login/update', 'changeLoginInfo')->name('changeLoginInfo');
     Route::get('/code-for-books', 'codeForBooks')->name('codeForBooks');
+    Route::put('/xp/user/update', 'updateXpUser')->name('updateXpUser');
     Route::put('/book/user/update', 'changeUserBook')->name('changeUserBook');
+    Route::post('/send/email/test', 'sendMail')->name('sendMail');
 });
 
 

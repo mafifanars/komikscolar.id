@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\MissionQuestionConnectorResource;
 use App\Http\Resources\MissionResource;
 use App\Http\Resources\QuestionResource;
 use App\Jobs\SendMailJob;
@@ -18,6 +19,8 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Unirest\Request as Req;
+
 
 class ApiController extends Controller
 {
@@ -70,6 +73,23 @@ class ApiController extends Controller
         if ($book_id != null) {
             $mission = MissionResource::collection(MissionSection::where('book_id', $book_id)->get());
         }
+
+        if ($mission != []) {
+            return $this->success($mission, "Success get all missions");
+        }else{
+            return $this->error([], "No data", 404);
+        }
+    }
+    
+    public function getMissionById($id)
+    {   
+        Mission::findOrFail($id);
+
+        $getOneMission = Mission::where('id', $id)->get();
+
+        $mission = MissionQuestionConnectorResource::collection($getOneMission);
+
+        return $mission;
 
         if ($mission != []) {
             return $this->success($mission, "Success get all missions");
@@ -252,6 +272,46 @@ class ApiController extends Controller
             return $this->error([], "Cannot update book", 406);
         }
     }
+
+    public function updateProfile(Request $request) 
+    {
+        if ($request->all() != null) {
+            $data = [];
+            if($request->alamat != null) {
+                $data["alamat"] = $request->alamat;
+            }
+            if($request->tgl_lahir != null) {
+                $data['tgl_lahir'] = $request->tgl_lahir;
+            }
+            if($request->profile != null) {
+                $data["profile"] = $request->profile;
+            }
+
+            if ($data != []) {
+                $user = User::findOrFail($request->id);
+                if ($user->update($data)) {
+                    return $this->success($data, "Success update profile");
+                }else{
+                    return $this->error($data, "Cannot update user data", 406);
+                }
+                
+            }
+            else{
+                return $this->error([], "Nothing to update", 404);
+            }
+
+        }
+        else{
+            return $this->error([], "No update data", 404);
+        }
+    }
+
+    // public function testGet() 
+    // {
+    //     $response = Unirest\Request::get("https://api-asa.usu.ac.id/users/mahasiswa/201402108", [
+    //         'Authorization' => 'Bearer ' . @$_COOKIE['ssotok'],
+    //     ]);
+    // }
 
 
 }

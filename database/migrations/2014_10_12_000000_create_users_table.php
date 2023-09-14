@@ -19,7 +19,9 @@ return new class extends Migration
             $table->string('password');
             $table->bigInteger('xp')->default(0);
             $table->bigInteger('mission_index')->default(1);
-            $table->string('profile')->default('http://localhost:8000/img/logo.png');
+            $table->text("alamat")->nullable();
+            $table->string("tgl_lahir")->nullable();
+            $table->string('profile')->default('https://komikscolar.id/img/alisa.png');
             $table->string('avatar')->nullable();
             $table->integer('login')->default(0);
             $table->unsignedBigInteger('book_id')->nullable();
