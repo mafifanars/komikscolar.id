@@ -21,6 +21,14 @@
                     <li>
                         <a href="/#social" class="inline-block text-base hover:text-primary mb-3">Sosial Media</a>
                     </li>
+                </ul>
+            </div>
+            <div class="w-full px-4 mb-12 md:w-1/3">
+                <h3 class="font-semibold text-xl text-dark mb-5">Halaman</h3>
+                <ul class="text-slate-500">
+                    <li>
+                        <a href="/panduan-penggunaan" class="inline-block text-base hover:text-primary mb-3">Panduan Penggunaan</a>
+                    </li>
                     <li>
                         <a href="/kebijakan-privasi" class="inline-block text-base hover:text-primary mb-3">Kebijakan Privasi</a>
                     </li>

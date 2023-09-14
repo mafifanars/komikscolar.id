@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,8 @@ Route::get('/get-in-touch', function () {
 
 Route::get('/kebijakan-privasi', function () {
     return view('kebijakan-privasi');
+});
+
+Route::get('/panduan-penggunaan', function () {
+    return view('panduan-penggunaan');
 });
