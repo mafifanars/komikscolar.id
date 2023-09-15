@@ -24,8 +24,9 @@ return new class extends Migration
             $table->string('profile')->default('https://komikscolar.id/img/alisa.png');
             $table->string('avatar')->nullable();
             $table->integer('login')->default(0);
-            $table->unsignedBigInteger('book_id')->nullable();
-            $table->foreign('book_id')->references('id')->on('books');
+            $table->integer('book_id')->default(0);
+            // $table->unsignedBigInteger('book_id')->nullable();
+            // $table->foreign('book_id')->references('id')->on('books');
             $table->rememberToken();
             $table->timestamps();
         });

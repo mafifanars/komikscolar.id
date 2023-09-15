@@ -306,6 +306,35 @@ class ApiController extends Controller
         }
     }
 
+    public function codeForBooksChangeUsed(Request $request) 
+    {
+        $user = User::findOrFail($request->userId);
+        $bookCode = QRForBook::findOrFail($request->bookId);
+        
+        if(
+            $user->update([
+                'book_id' => $request->userClaimBook,
+            ]) 
+        ) 
+        {
+            if(
+                $bookCode->update([
+                    'used' => $request->bookUsed,
+                ])
+            )
+            {
+                return $this->success([], "Success");
+            }
+            else{
+                return $this->error([], "Error", 406);
+            }
+        }
+        else{
+            return $this->error([], "Error", 406);
+        }
+
+    }
+
     // public function testGet() 
     // {
     //     $response = Unirest\Request::get("https://api-asa.usu.ac.id/users/mahasiswa/201402108", [

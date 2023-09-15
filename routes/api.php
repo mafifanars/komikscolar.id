@@ -40,6 +40,7 @@ Route::prefix('scolar/api')->controller(ApiController::class)->group(function ()
     Route::get('/question', 'getQuestion')->name('getQuestion');
     Route::get('/choice', 'getChoice')->name('getChoice');
     Route::get('/code-for-books', 'codeForBooks')->name('codeForBooks');
+    Route::put('/code-for-books/change-used', 'codeForBooksChangeUsed')->name('codeForBooksChangeUsed');
     Route::put('/xp/user/update', 'updateXpUser')->name('updateXpUser');
     Route::put('/book/user/update', 'changeUserBook')->name('changeUserBook');
     Route::post('/send/email/test', 'sendMail')->name('sendMail');
