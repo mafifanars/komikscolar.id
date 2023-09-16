@@ -251,7 +251,6 @@ class ApiController extends Controller
         }
     }
 
-
     public function changeUserBook(Request $request)
     {
         $user = User::findOrFail($request->id);
