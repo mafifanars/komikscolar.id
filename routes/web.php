@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+require __Dir__ . '/api.php';
+
 Route::get('/', function () {
     return view('app');
 });
 
 Route::get('/get-in-touch', function () {
     return view('get-in-touch');
+});
+
+Route::get('/kebijakan-privasi', function () {
+    return view('kebijakan-privasi');
+});
+
+Route::get('/panduan-penggunaan', function () {
+    return view('panduan-penggunaan');
 });

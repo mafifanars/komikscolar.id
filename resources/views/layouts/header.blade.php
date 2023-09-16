@@ -15,16 +15,16 @@
                 <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark lg:dark:bg-transparent dark:shadow-slate-800">
                     <ul class="block lg:flex">
                         <li class="group">
-                            <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Beranda</a>
+                            <a href="/#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Beranda</a>
                         </li>
                         <li class="group">
-                            <a href="#product" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Produk</a>
+                            <a href="/#product" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Produk</a>
                         </li>
                         <li class="group">
-                            <a href="#social" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Sosial Media</a>
+                            <a href="/#social" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Sosial Media</a>
                         </li>
                         <li class="group">
-                            <a href="#product" class="text-sm text-white bg-[#9C73EC] rounded-full mt-1 py-1 px-4 mx-8 flex group-hover:text-white hover:bg-primary dark:text-white">Vol. 1 Mission of Alisa</a>
+                            <a href="/#product" class="text-sm text-white bg-[#9C73EC] rounded-full mt-1 py-1 px-4 mx-8 flex group-hover:text-white hover:bg-primary dark:text-white">Vol. 1 Mission of Alisa</a>
                         </li>
                     </ul>
                 </nav>
