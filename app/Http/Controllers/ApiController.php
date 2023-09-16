@@ -332,6 +332,7 @@ class ApiController extends Controller
         else{
             return $this->error([], "Error", 406);
         }
+        
 
     }
 
