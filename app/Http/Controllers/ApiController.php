@@ -283,9 +283,7 @@ class ApiController extends Controller
             if($request->tgl_lahir != null) {
                 $data['tgl_lahir'] = $request->tgl_lahir;
             }
-            if($request->profile != null) {
-                $data["profile"] = $request->profile;
-            }
+            $data["profile"] = $request->profile;
 
             if ($data != []) {
                 $user = User::findOrFail($request->id);
