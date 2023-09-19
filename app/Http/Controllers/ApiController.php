@@ -152,6 +152,7 @@ class ApiController extends Controller
 
     public function updateXpUser(Request $request)
     {
+        $user = User::findOrFail($request->id);
 
         $data = [
             'xp' => $request->xp,
@@ -227,6 +228,7 @@ class ApiController extends Controller
 
     public function changeLoginInfo(Request $request)
     {
+        $user = User::findOrFail($request->id);
         
         if ($user->update([
             'login' => $request->login
