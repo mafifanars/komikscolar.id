@@ -276,9 +276,7 @@ class ApiController extends Controller
     {
         if ($request->all() != null) {
             $data = [];
-            if ($request->name != null) {
-                $data['name'] = $request->name;
-            }
+            $data['name'] = $request->name;
             if($request->alamat != null) {
                 $data["alamat"] = $request->alamat;
             }
