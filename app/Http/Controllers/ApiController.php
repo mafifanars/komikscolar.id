@@ -152,7 +152,6 @@ class ApiController extends Controller
 
     public function updateXpUser(Request $request)
     {
-        $user = User::find($request->id);
 
         $data = [
             'xp' => $request->xp,
@@ -228,7 +227,6 @@ class ApiController extends Controller
 
     public function changeLoginInfo(Request $request)
     {
-        $user = User::find($request->id);
         
         if ($user->update([
             'login' => $request->login
@@ -250,7 +248,6 @@ class ApiController extends Controller
             return $this->error([], "No data", 404);
         }
     }
-
 
     public function changeUserBook(Request $request)
     {
@@ -313,6 +310,8 @@ class ApiController extends Controller
     {
         $user = User::findOrFail($request->userId);
         $bookCode = QRForBook::findOrFail($request->bookId);
+
+        // return $request;
         
         if(
             $user->update([
@@ -326,7 +325,10 @@ class ApiController extends Controller
                 ])
             )
             {
-                return $this->success([], "Success");
+                return $this->success([
+                    'userClaimBook' => $request->userClaimBook,
+                    'bookUsed' => $request->bookUsed,
+                ], "Success");
             }
             else{
                 return $this->error([], "Error", 406);
@@ -336,7 +338,6 @@ class ApiController extends Controller
             return $this->error([], "Error", 406);
         }
         
-
     }
 
     // public function testGet() 
