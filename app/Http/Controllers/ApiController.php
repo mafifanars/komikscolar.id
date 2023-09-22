@@ -338,6 +338,18 @@ class ApiController extends Controller
         
     }
 
+    public function deleteUser($id) 
+    {
+        $user = User::findOrFail($id);
+
+        if ($user->delete()) {
+            return $this->success([], "Success delete user profile");
+        }else{
+            return $this->error([], "Can't delete user profile", 406);
+        }
+
+    }
+
     // public function testGet() 
     // {
     //     $response = Unirest\Request::get("https://api-asa.usu.ac.id/users/mahasiswa/201402108", [
