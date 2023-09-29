@@ -350,6 +350,22 @@ class ApiController extends Controller
 
     }
 
+    public function logoutUser($id) 
+    {
+        $user = User::findOrFail($id);
+        
+        $data = [
+            'login' => 0,
+        ];
+
+        if ($user->update($data)) {
+            return $this->success([], "Success logout user");
+        }else{
+            return $this->error([], "Can't logout user", 406); 
+        }
+
+    }
+
     // public function testGet() 
     // {
     //     $response = Unirest\Request::get("https://api-asa.usu.ac.id/users/mahasiswa/201402108", [

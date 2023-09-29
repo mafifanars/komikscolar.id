@@ -32,6 +32,7 @@ Route::prefix('scolar/api')->controller(ApiController::class)->group(function ()
     Route::put('/user/login/update', 'changeLoginInfo')->name('changeLoginInfo');
     Route::put('/user/email-verify-at/update', 'verifyMail')->name('verifyMail');
     Route::put('/user/profile/update', 'updateProfile')->name("updateProfile");
+    Route::put('/user/{id}/logout', 'logoutUser')->name('logoutUser');
     Route::post('/user/login', 'loginUser')->name('loginUser');
     Route::post('/user/create', 'createUser')->name('createUser');
     Route::delete('/user/{id}/delete', 'deleteUser')->name('deleteUser');
