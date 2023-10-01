@@ -13,6 +13,7 @@ use App\Models\MissionSection;
 use App\Models\QRForBook;
 use App\Models\Question;
 use App\Models\User;
+use App\Models\UserClaimBook;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
 
@@ -121,7 +122,16 @@ class ApiiGetController extends Controller
         }
     }
 
+    public function lookClaimBook() 
+    {
+        $claimBook = UserClaimBook::all();
 
+        if ($claimBook != []) {
+            return $this->success($claimBook, "Success get all users data");
+        }else{
+            return $this->error([], "No data", 404);
+        }
+    }
 
 
 }
