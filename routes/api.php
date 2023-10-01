@@ -29,7 +29,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 
 Route::prefix('scolar/api')->controller(ApiController::class)->group(function () {
-    Route::get('/user/token', 'getCsrfToken')->name('getToken');
+    // Route::get('/user/token', 'getCsrfToken')->name('getToken');
 });
 
 Route::prefix('scolar/api')->controller(ApiiGetController::class)->group(function () {
@@ -38,11 +38,11 @@ Route::prefix('scolar/api')->controller(ApiiGetController::class)->group(functio
     Route::get('/user/from/{email}', 'getUserFromEmail')->name('getUserFromEmail');
     Route::get('/mission', 'getMission')->name('getMission');
     Route::get('/mission/{id}', 'getMissionById')->name('getMissionById');
-    // Route::get('/mission-from-book/{book_id}', 'getMission')->name('getMission');
+    Route::get('/mission-from-book/{book_id}', 'getMission')->name('getMission');
     Route::get('/question', 'getQuestion')->name('getQuestion');
     Route::get('/choice', 'getChoice')->name('getChoice');
     Route::get('/code-for-books', 'codeForBooks')->name('codeForBooks');
-    Route::get('see-claim-book', 'lookClaimBook')->name('lookClaimBook');
+    Route::get('/see-claim-book', 'lookClaimBook')->name('lookClaimBook');
 });
 
 Route::prefix('scolar/api')->controller(ApiiPutController::class)->group(function () {
