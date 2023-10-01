@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('q_r_for_books', function (Blueprint $table) {
+        Schema::create('user_claim_books', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('book_id');
-            $table->foreign('book_id')->references('id')->on('books');
-            $table->string('code');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('qr_id');
+            $table->foreign('qr_id')->references('id')->on('q_r_for_books');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('q_r_for_books');
+        Schema::dropIfExists('user_claim_books');
     }
 };

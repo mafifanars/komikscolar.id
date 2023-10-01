@@ -25,6 +25,9 @@ class User extends Authenticatable
         'mission_index',
         'login',
         'book_id',
+        'alamat',
+        'profile',
+        'tgl_lahir',
     ];
 
     /**

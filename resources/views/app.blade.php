@@ -67,7 +67,7 @@
                             <h1 class="text-lg font-medium">Dapatkan Aplikasi Scolar</h1>
                             <p class="text-sm m-4 text-[#A4A7AF]">Gunakan fitur Augmented Reality pada aplikasi Scolar untuk membaca komik dengan lebih menarik.</p>
                             <div class="bg-white font-medium text-dark rounded-lg w-40 py-2 mx-auto mt-10">
-                                <a href="#" class="flex items-center justify-center">
+                                <a href="https://play.google.com/store/apps/details?id=com.TimScolar.Scolar" class="flex items-center justify-center" target="_blank">
                                     <svg role="img" width="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Google Play</title><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg>
                                     <p class="ml-2"><span class="text-[9px] flex -mb-1 ml-[1px]">GET IT ON</span>Google Play</p>
                                   </a>
