@@ -111,7 +111,7 @@ class ApiiPostController extends Controller
                 'qr_id' => $qrcode->id,
             ];
 
-            if (UserClaimBook::created($data)) {
+            if (UserClaimBook::create($data)) {
                 return $this->success($data, 'Success update book');
             }
             else{
