@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use App\Jobs\SendMailJob;
 use App\Models\QRForBook;
 use App\Models\User;
@@ -78,7 +79,7 @@ class ApiiPostController extends Controller
                     return $this->error(["email" => "Email belum terverifikasi"], "Canot login", 406);
                 }
                 else{
-                    return $this->success($user, "Login success");
+                    return $this->success(UserResource::collection(User::where('email', $data['email'])->get()), "Login success");
                 }
 
             }

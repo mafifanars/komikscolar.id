@@ -87,12 +87,12 @@ class ChoiceSeeder extends Seeder
             [
                 "questions_id" => 4,
                 "choice" => "Shera",
-                "jawaban_benar" => 1,
+                "jawaban_benar" => 0,
             ],
             [
                 "questions_id" => 4,
-                "choice" => "Sarah",
-                "jawaban_benar" => 0,
+                "choice" => "Kiro",
+                "jawaban_benar" => 1,
             ],
             [
                 "questions_id" => 5,
