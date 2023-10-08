@@ -26,41 +26,53 @@
             <div class="w-full self-center px-4 bg-gradient-to-r from-primary to-indigo-500 mx-auto rounded-xl py-6">
                 <div class="flex justify-center">
                     <div class="w-20 h-20 rounded-full overflow-hidden bg-white">
-                        <img src="{{ asset('img/logo.png') }}" alt="Profile Picture" class="object-cover w-full h-full">
+                        <img src="{{ asset('img/logo.png') }}" alt="Profile Picture" class="object-cover w-full h-full cursor-pointer" onclick="window.location.href='/'">
                     </div>
                 </div>
                 <div class="px-4 mb-6">
-                    <h1 class="text-center mt-5 text-white text-sm">Smart Comic Learning Berbasis Augmented Reality</h1>
+                    <h1 class="text-center mt-5 text-white text-medium">Smart Comic Learning Berbasis Augmented Reality</h1>
                 </div>
                 <div class="block justify-center gap-4">
                     {{-- Shopee --}}
                     <div class="font-medium rounded-lg w-full py-2 mb-3">
-                        <a href="https://shopee.co.id/komik.scolar" class="border p-2 hover:bg-[#F9C641] hover:border-none text-white rounded-full flex items-center justify-center" target="_blank">
+                        <a href="https://shopee.co.id/komik.scolar" class="border p-2 hover:bg-hover hover:border-none text-white rounded-full flex items-center justify-center" target="_blank">
                             <i class="md:ml-4 fab fa-shopify"></i><span class="ml-2">Shopee</span>
                         </a>
                     </div>
                     {{-- Playstore --}}
                     <div class="font-medium rounded-lg w-full py-2 mb-3">
-                        <a href="#" class="border p-2 hover:bg-[#F9C641] hover:border-none text-white rounded-full flex items-center justify-center" target="_blank">
+                        <a href="https://play.google.com/store/apps/details?id=com.TimScolar.Scolar" class="border p-2 hover:bg-hover hover:border-none text-white rounded-full flex items-center justify-center" target="_blank">
                             <i class="md:ml-4 fab fa-google-play"></i><span class="ml-2">Play Store</span>
+                        </a>
+                    </div>
+                    {{-- WhatsApp --}}
+                    <div class="font-medium rounded-lg w-full py-2 mb-3">
+                        <a href="https://wa.me/6281360688767" class="border p-2 hover:bg-hover hover:border-none text-white rounded-full flex items-center justify-center" target="_blank">
+                            <i class="md:ml-4 fa-brands fa-whatsapp"></i><span class="ml-2">WhatsApp</span>
                         </a>
                     </div>
                     {{-- Instagram --}}
                     <div class="font-medium rounded-lg w-full py-2 mb-3">
-                        <a href="https://www.instagram.com/komik.scolar/" class="border p-2 hover:bg-[#F9C641] hover:border-none text-white rounded-full flex items-center justify-center" target="_blank">
+                        <a href="https://www.instagram.com/komik.scolar/" class="border p-2 hover:bg-hover hover:border-none text-white rounded-full flex items-center justify-center" target="_blank">
                             <i class="md:ml-4 fab fa-instagram"></i><span class="ml-2">Instagram</span>
                         </a>
                     </div>
                     {{-- Tiktok --}}
                     <div class="font-medium rounded-lg w-full py-2 mb-3">
-                        <a href="https://www.tiktok.com/@komik.scolar" class="border p-2 hover:bg-[#F9C641] hover:border-none text-white rounded-full flex items-center justify-center" target="_blank">
+                        <a href="https://www.tiktok.com/@komik.scolar" class="border p-2 hover:bg-hover hover:border-none text-white rounded-full flex items-center justify-center" target="_blank">
                             <i class="md:ml-4 fab fa-tiktok"></i><span class="ml-2">TikTok</span>
                         </a>
                     </div>
                     {{-- Facebook --}}
                     <div class="font-medium rounded-lg w-full py-2 mb-3">
-                        <a href="https://www.facebook.com/profile.php?id=100094011793719" class="border p-2 hover:bg-[#F9C641] hover:border-none text-white rounded-full flex items-center justify-center" target="_blank">
+                        <a href="https://www.facebook.com/profile.php?id=100094011793719" class="border p-2 hover:bg-hover hover:border-none text-white rounded-full flex items-center justify-center" target="_blank">
                             <i class="md:ml-4 fab fa-facebook"></i><span class="ml-2">Facebook</span>
+                        </a>
+                    </div>
+                    {{-- Panduan Penggunaan --}}
+                    <div class="font-medium rounded-lg w-full py-2 mb-3">
+                        <a href="/panduan-penggunaan" class="border p-2 hover:bg-hover hover:border-none text-white rounded-full flex items-center justify-center" target="_blank">
+                            <i class="md:ml-4 fa-solid fa-book-bookmark"></i><span class="ml-2">Panduan Penggunaan</span>
                         </a>
                     </div>
                 </div>

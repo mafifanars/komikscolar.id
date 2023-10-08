@@ -12,6 +12,7 @@ module.exports = {
         primary: '#8B54F5',
         dark: '#0f172a',
         secondary: '#64748b',
+        hover: '#F9C641',
       },
       screens: {
         '2xl': '1320px',
