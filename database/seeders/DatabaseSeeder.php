@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             QuestionSeeder::class,
             ChoiceSeeder::class,
             QrCodeSeeder::class,
+            ArtikelOrangtuaSeeder::class,
         ]);
 
 
