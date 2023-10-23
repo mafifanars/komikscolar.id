@@ -7,6 +7,7 @@ use App\Http\Resources\MissionQuestionConnectorResource;
 use App\Http\Resources\MissionResource;
 use App\Http\Resources\QuestionResource;
 use App\Http\Resources\UserResource;
+use App\Models\ArtikelOrangtua;
 use App\Models\Choice;
 use App\Models\Mission;
 use App\Models\MissionSection;
@@ -128,6 +129,17 @@ class ApiiGetController extends Controller
 
         if ($claimBook != []) {
             return $this->success($claimBook, "Success get all users data");
+        }else{
+            return $this->error([], "No data", 404);
+        }
+    }
+
+    public function getArtikelOrangtua() 
+    {
+        $artikelOrangtua = ArtikelOrangtua::all();
+
+        if ($artikelOrangtua != []) {
+            return $this->success($artikelOrangtua, "Success get all parent articles data");
         }else{
             return $this->error([], "No data", 404);
         }
