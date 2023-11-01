@@ -12,6 +12,7 @@ use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class ApiiPostController extends Controller
 {
@@ -125,5 +126,26 @@ class ApiiPostController extends Controller
 
     }
 
+    public function changeProfilePic($id, Request $request)
+    {
+        
+        $image = $request->file('image');
+
+        $fileStorage = Storage::put('profile', $image);
+
+        $imageFile = explode('/', $fileStorage);
+
+        $imageUrl = Storage::url($imageFile[1]);
+
+        $user = User::findOrFail($id);
+
+        if($user->update([
+            'profile' => $imageUrl
+        ])) {
+            return $this->success($imageUrl, "Profile image successfully change");
+        }else{
+            return $this->error([], "Profile image cannot changed", 406);
+        }
+    }
 
 }

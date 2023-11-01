@@ -56,6 +56,7 @@ Route::prefix('scolar/api')->controller(ApiiPutController::class)->group(functio
 
 Route::prefix('scolar/api')->controller(ApiiPostController::class)->group(function () {
     Route::post('/user/login', 'loginUser')->name('loginUser');
+    Route::post('/user/{id}/profile/picture/update', 'changeProfilePic')->name('changeProfilePic');
     Route::post('/user/create', 'createUser')->name('createUser');
     Route::post('/send/email/test', 'sendMail')->name('sendMail');
     Route::post('/book/user/update', 'changeUserBook')->name('changeUserBook');
