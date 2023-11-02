@@ -137,7 +137,7 @@ class ApiiPostController extends Controller
 
         $imageFile = explode('/', $fileStorage);
 
-        $imageUrl = Storage::url($imageFile[1]);
+        $imageUrl = Storage::url($imageFile[1] . '/' . $imageFile[2]);
 
         $user = User::findOrFail($id);
 
