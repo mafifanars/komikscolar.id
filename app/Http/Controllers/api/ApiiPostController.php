@@ -131,7 +131,9 @@ class ApiiPostController extends Controller
         
         $image = $request->file('image');
 
-        $fileStorage = Storage::put('profile', $image);
+        Storage::deleteDirectory('profile/' . (string)$id);
+
+        $fileStorage = Storage::put('profile/' . (string)$id, $image);
 
         $imageFile = explode('/', $fileStorage);
 
