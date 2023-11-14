@@ -26,6 +26,7 @@ class User extends Authenticatable
         'login',
         'book_id',
         'alamat',
+        'avatar',
         'profile',
         'tgl_lahir',
     ];
