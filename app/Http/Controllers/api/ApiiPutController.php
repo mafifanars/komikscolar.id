@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Avatar;
 use App\Models\QRForBook;
 use App\Models\User;
 use App\Models\UserClaimBook;
@@ -105,6 +106,24 @@ class ApiiPutController extends Controller
             return $this->success([], "Success logout user");
         }else{
             return $this->error([], "Can't logout user", 406); 
+        }
+
+    }
+
+    public function changeAvatar($id, Request $request)
+    {
+        $user = User::findOrFail($id);
+
+        $avatar = Avatar::findOrFail($request->avatar_id);
+
+        $data = [
+            'avatar' => $avatar->link,
+        ];
+
+        if ($user->update($data)) {
+            return $this->success($data, "Success change avatar");
+        } else {
+            return $this->error([], "Can't change avatar", 406);
         }
 
     }
