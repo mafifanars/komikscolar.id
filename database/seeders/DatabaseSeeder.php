@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             ChoiceSeeder::class,
             QrCodeSeeder::class,
             ArtikelOrangtuaSeeder::class,
+            AvatarSeeder::class,
         ]);
 
 
