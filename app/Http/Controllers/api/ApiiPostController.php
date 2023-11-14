@@ -5,6 +5,8 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use App\Jobs\SendMailJob;
+use App\Models\Avatar;
+use App\Models\ClaimedAvatar;
 use App\Models\QRForBook;
 use App\Models\User;
 use App\Models\UserClaimBook;
@@ -147,6 +149,24 @@ class ApiiPostController extends Controller
             return $this->success($imageUrl, "Profile image successfully change");
         }else{
             return $this->error([], "Profile image cannot changed", 406);
+        }
+    }
+
+    public function userPurchaseAvatar(Request $request)
+    {
+        $user = User::findOrFail($request->user_id);
+
+        $avatar = Avatar::findOrFail($request->avatar_id);
+
+        $data = [
+            'user_id' => $user->id,
+            'avatar_id' => $avatar->id,
+        ];
+
+        if (ClaimedAvatar::create($data)) {
+            return $this->success($data, "Purchase avatar success");
+        }else {
+            return $this->error([], "Purchase avatar failed", 406);
         }
     }
 
