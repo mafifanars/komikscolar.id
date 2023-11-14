@@ -44,6 +44,8 @@ Route::prefix('scolar/api')->controller(ApiiGetController::class)->group(functio
     Route::get('/code-for-books', 'codeForBooks')->name('codeForBooks');
     Route::get('/see-claim-book', 'lookClaimBook')->name('lookClaimBook');
     Route::get('/artikel-orangtua', 'getArtikelOrangtua')->name('getArtikelOrangtua');
+    Route::get('/avatars', 'getAvatar')->name('getAvatar');
+    Route::get('/avatar/see-purchase', 'seePurchaseAvatar')->name('seePurchaseAvatar');
 });
 
 Route::prefix('scolar/api')->controller(ApiiPutController::class)->group(function () {
@@ -52,12 +54,14 @@ Route::prefix('scolar/api')->controller(ApiiPutController::class)->group(functio
     Route::put('/user/profile/update', 'updateProfile')->name("updateProfile");
     Route::put('/user/{id}/logout', 'logoutUser')->name('logoutUser');
     Route::put('/xp/user/update', 'updateXpUser')->name('updateXpUser');
+    Route::put('/user/{id}/change-avatar', 'changeAvatar')->name('changeAvatar');
 });
 
 Route::prefix('scolar/api')->controller(ApiiPostController::class)->group(function () {
     Route::post('/user/login', 'loginUser')->name('loginUser');
     Route::post('/user/{id}/profile/picture/update', 'changeProfilePic')->name('changeProfilePic');
     Route::post('/user/create', 'createUser')->name('createUser');
+    Route::post('/user/purchase-avatar', 'userPurchaseAvatar')->name('userPurchaseAvatar');
     Route::post('/send/email/test', 'sendMail')->name('sendMail');
     Route::post('/book/user/update', 'changeUserBook')->name('changeUserBook');
 });
