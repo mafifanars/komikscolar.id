@@ -8,7 +8,9 @@ use App\Http\Resources\MissionResource;
 use App\Http\Resources\QuestionResource;
 use App\Http\Resources\UserResource;
 use App\Models\ArtikelOrangtua;
+use App\Models\Avatar;
 use App\Models\Choice;
+use App\Models\ClaimedAvatar;
 use App\Models\Mission;
 use App\Models\MissionSection;
 use App\Models\QRForBook;
@@ -145,5 +147,26 @@ class ApiiGetController extends Controller
         }
     }
 
+    public function getAvatar() 
+    {
+        $avatar = Avatar::all();
+
+        if ($avatar != []) {
+            return $this->success($avatar, "Success get all avatar data");
+        }else{
+            return $this->error([], "No data", 404);
+        }
+    }
+
+    public function seePurchaseAvatar()
+    {
+        $purchaseAvatar = ClaimedAvatar::all();
+
+        if ($purchaseAvatar != []) {
+            return $this->success($purchaseAvatar, "Success get all purchase avatar data");
+        }else{
+            return $this->error([], "No data", 404);
+        }
+    }
 
 }
