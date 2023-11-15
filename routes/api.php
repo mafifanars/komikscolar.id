@@ -45,6 +45,7 @@ Route::prefix('scolar/api')->controller(ApiiGetController::class)->group(functio
     Route::get('/see-claim-book', 'lookClaimBook')->name('lookClaimBook');
     Route::get('/artikel-orangtua', 'getArtikelOrangtua')->name('getArtikelOrangtua');
     Route::get('/avatars', 'getAvatar')->name('getAvatar');
+    Route::get('/avatar/user/{id}/purchase', 'seeUserPurchase')->name('seeUserPurchase');
     Route::get('/avatar/see-purchase', 'seePurchaseAvatar')->name('seePurchaseAvatar');
 });
 

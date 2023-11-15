@@ -20,8 +20,6 @@ use App\Models\UserClaimBook;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
 
-use function PHPUnit\Framework\isNull;
-
 class ApiiGetController extends Controller
 {
 
@@ -31,7 +29,7 @@ class ApiiGetController extends Controller
     {
         $user = UserResource::collection(User::all());
 
-        if ($user != []) {
+        if (count($user) > 0) {
             return $this->success($user, "Success get all users data");
         }else{
             return $this->error([], "No data", 404);
@@ -42,7 +40,7 @@ class ApiiGetController extends Controller
     {   
         $user = UserResource::collection(User::where('id', $id)->get());
 
-        if ($user != []) {
+        if (count($user) > 0) {
             return $this->success($user, "Success get user");
         }else{
             return $this->error([], "No data", 404);
@@ -53,7 +51,7 @@ class ApiiGetController extends Controller
     {
         $user = UserResource::collection(User::where('email', $email)->get());
 
-        if ($user != []) {
+        if (count($user) > 0) {
             return $this->success($user, "Success get user");
         }else{
             return $this->error([], "No data", 404);
@@ -68,7 +66,7 @@ class ApiiGetController extends Controller
             $mission = MissionResource::collection(MissionSection::where('book_id', $book_id)->get());
         }
 
-        if ($mission != []) {
+        if (count($mission) > 0) {
             return $this->success($mission, "Success get all missions");
         }else{
             return $this->error([], "No data", 404);
@@ -85,7 +83,7 @@ class ApiiGetController extends Controller
 
         return $mission;
 
-        if ($mission != []) {
+        if (count($mission) > 0) {
             return $this->success($mission, "Success get all missions");
         }else{
             return $this->error([], "No data", 404);
@@ -96,7 +94,7 @@ class ApiiGetController extends Controller
     {
         $question = QuestionResource::collection(Question::all());
 
-        if ($question != []) {
+        if (count($question) > 0) {
             return $this->success($question, "Success get all questions");
         }else{
             return $this->error([], "No data", 404);
@@ -107,7 +105,7 @@ class ApiiGetController extends Controller
     {
         $choice =  Choice::all();
 
-        if ($choice != []) {
+        if (count($choice) > 0) {
             return $this->success($choice, "Success get all choices");
         }else{
             return $this->error([], "No data", 404);
@@ -118,7 +116,7 @@ class ApiiGetController extends Controller
     {
         $code = QRForBook::all();
 
-        if ($code != []) {
+        if (count($code) > 0) {
             return $this->success($code, "Success get all code data");
         }else{
             return $this->error([], "No data", 404);
@@ -129,7 +127,7 @@ class ApiiGetController extends Controller
     {
         $claimBook = UserClaimBook::all();
 
-        if ($claimBook != []) {
+        if (count($claimBook) > 0) {
             return $this->success($claimBook, "Success get all users data");
         }else{
             return $this->error([], "No data", 404);
@@ -140,7 +138,7 @@ class ApiiGetController extends Controller
     {
         $artikelOrangtua = ArtikelOrangtua::all();
 
-        if ($artikelOrangtua != []) {
+        if (count($artikelOrangtua) > 0) {
             return $this->success($artikelOrangtua, "Success get all parent articles data");
         }else{
             return $this->error([], "No data", 404);
@@ -151,7 +149,7 @@ class ApiiGetController extends Controller
     {
         $avatar = Avatar::all();
 
-        if ($avatar != []) {
+        if (count($avatar) > 0) {
             return $this->success($avatar, "Success get all avatar data");
         }else{
             return $this->error([], "No data", 404);
@@ -162,11 +160,23 @@ class ApiiGetController extends Controller
     {
         $purchaseAvatar = ClaimedAvatar::all();
 
-        if ($purchaseAvatar != []) {
+        if (count($purchaseAvatar) > 0) {
             return $this->success($purchaseAvatar, "Success get all purchase avatar data");
         }else{
             return $this->error([], "No data", 404);
         }
+    }
+
+    public function seeUserPurchase($id)
+    {
+        $avatarPurchase = ClaimedAvatar::where('user_id', $id)->get();
+
+        if (count($avatarPurchase) > 0) {
+            return $this->success($avatarPurchase, "Success get all purchase avatar data");
+        }else{
+            return $this->error([], "No data", 404);
+        }
+
     }
 
 }
